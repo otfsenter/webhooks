@@ -10,7 +10,7 @@ def git_pull():
     os.system('cd /root/html/otfsenter.github.io/; git pull')
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def hello_world():
     git_pull()
     return "Hello World!"
