@@ -7,8 +7,7 @@ app = Flask(__name__)
 
 
 def git_pull():
-    os.chdir('cd /root/html/otfsenter.github.io')
-    os.system('git pull')
+    os.system('cd /root/html/otfsenter.github.io/; git pull')
 
 
 @app.route('/')
