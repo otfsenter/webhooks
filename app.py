@@ -1,11 +1,19 @@
 #!/usr/bin/python3
 from flask import Flask, request
+import json
+import os
 
 app = Flask(__name__)
 
 
+def git_pull():
+    os.chdir('cd /root/webhooks/')
+    os.system('git pull')
+
+
 @app.route('/')
 def hello_world():
+    git_pull()
     return "Hello World!"
     # if request.method == 'POST':
     #     data_post = str(request.json)
